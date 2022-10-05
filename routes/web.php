@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::view('/cart','cart');
+Route::view('/items/{id}','product_detail');
+Route::view('/checkout','checkout');
+Route::view('/confirm','confirmation');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
