@@ -17,13 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Schema::disableForeignKeyConstraints();
-        \App\Models\User::truncate();
-        \App\Models\User::factory(10)->create();
-        
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(UserSeeder::class);
         $this->call(ItemSeeder::class);
         Schema::enableForeignKeyConstraints();
     }
