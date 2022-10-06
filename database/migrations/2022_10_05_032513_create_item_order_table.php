@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign("order_id")->references("id")->on("orders")->onDelete("cascade");
             $table->unsignedBigInteger("item_id")->index();
             $table->foreign("item_id")->references("id")->on("items")->onDelete("cascade");
-            $table->unsignedInteger("qty")->default(1);
+            $table->unsignedInteger("quantity")->default(1);
             $table->string("desc", 500)->nullable();
             $table->timestamps();
         });

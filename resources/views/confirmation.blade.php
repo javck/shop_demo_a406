@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="hero-cap text-center">
-                        <h2>Confirmation</h2>
+                        <h2>訂單確認</h2>
                     </div>
                 </div>
             </div>
@@ -21,24 +21,24 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="confirmation_tittle">
-          <span>Thank you. Your order has been received.</span>
+          <span>謝謝你，你的訂單已經成立.</span>
         </div>
       </div>
       <div class="col-lg-6 col-lx-4">
         <div class="single_confirmation_details">
-          <h4>order info</h4>
+          <h4>訂單資訊</h4>
           <ul>
             <li>
-              <p>order number</p><span>: 60235</span>
+              <p>單號</p><span>: {{$order->trade_no}}</span>
             </li>
             <li>
-              <p>data</p><span>: Oct 03, 2017</span>
+              <p>日期</p><span>: {{ $order->created_at->format('Y-m-d') }}</span>
             </li>
             <li>
-              <p>total</p><span>: USD 2210</span>
+              <p>合計</p><span>: TWD {{ $order->subtotal }}</span>
             </li>
             <li>
-              <p>mayment methord</p><span>: Check payments</span>
+              <p>付款方式</p><span>: {{ $order->pay_type }}</span>
             </li>
           </ul>
         </div>
@@ -85,44 +85,38 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="order_details_iner">
-          <h3>Order Details</h3>
+          <h3>訂單明細</h3>
           <table class="table table-borderless">
             <thead>
               <tr>
-                <th scope="col" colspan="2">Product</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total</th>
+                <th scope="col" colspan="2">商品</th>
+                <th scope="col">數量</th>
+                <th scope="col">合計</th>
               </tr>
             </thead>
             <tbody>
+              @foreach ($items as $item)
               <tr>
-                <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
-                <th>x02</th>
-                <th> <span>$720.00</span></th>
+                <th colspan="2"><span>{{ $item->title }}</span></th>
+                <th>x{{ $item->pivot->quantity }}</th>
+                <th> <span>${{ $item->price * $item->pivot->quantity }}</span></th>
+              </tr>
+              @endforeach
+              
+              <tr>
+                <th colspan="3">小計</th>
+                <th> <span>${{ $order->subtotal }}</span></th>
               </tr>
               <tr>
-                <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
-                <th>x02</th>
-                <th> <span>$720.00</span></th>
-              </tr>
-              <tr>
-                <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
-                <th>x02</th>
-                <th> <span>$720.00</span></th>
-              </tr>
-              <tr>
-                <th colspan="3">Subtotal</th>
-                <th> <span>$2160.00</span></th>
-              </tr>
-              <tr>
-                <th colspan="3">shipping</th>
-                <th><span>flat rate: $50.00</span></th>
+                <th colspan="3">運費</th>
+                <th><span>flat rate: $0</span></th>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <th scope="col" colspan="3">Quantity</th>
-                <th scope="col">Total</th>
+                <th scope="col" colspan="2">數量</th>
+                <th scope="col">x{{ $quantity }}</th>
+                <th scope="col">${{ $order->subtotal }}</th>
               </tr>
             </tfoot>
           </table>

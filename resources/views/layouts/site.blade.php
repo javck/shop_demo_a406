@@ -45,13 +45,13 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{ url('/') }}">首頁</a></li>
                                     <li><a href="shop.html">shop</a></li>
                                     <li><a href="about.html">about</a></li>
                                     <li class="hot"><a href="#">Latest</a>
@@ -72,7 +72,7 @@
                                             <li><a href="{{ url('showcart') }}">Cart</a></li>
                                             <li><a href="elements.html">Element</a></li>
                                             <li><a href="confirmation.html">Confirmation</a></li>
-                                            <li><a href="checkout.html">Product Checkout</a></li>
+                                            <li><a href="{{ url('/checkout') }}">Product Checkout</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">Contact</a></li>

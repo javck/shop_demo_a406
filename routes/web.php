@@ -15,17 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/', 'SiteController@renderHomePage');
-    Route::get('/addcart/{ids}','SiteController@addCart');
+    Route::get('/addcart/{id}','SiteController@addCart');
     Route::get('/items/{id}','SiteController@renderItemDetailPage');
     Route::get('/checkout','SiteController@renderCheckoutPage');
     Route::get('/pay','SiteController@pay');
+    Route::post('/pay/callback','SiteController@payCallback');
+    Route::get('/confirm/{order_id}','SiteController@renderConfirmationPage');
 });
 Route::get('/showcart',App\Http\Livewire\Cart::class);
-
-
-
-Route::view('/cart','cart');
-Route::view('/confirm','confirmation');
 
 Route::middleware([
     'auth:sanctum',

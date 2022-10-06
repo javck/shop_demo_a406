@@ -19,6 +19,21 @@ class CartItem extends Component
         Cart::session($user->id)->update($this->cart['id'],['quantity'=>$updateQty]);
     }
 
+    public function cartReset()
+    {
+        $user = Auth::user();
+        $this->subtotal = $this->cart['price'] * $this->quantity;
+        Cart::session($user->id)->remove($this->cart['id']);
+        Cart::session($user->id)->add([
+            'id' => $this->cart['id'],
+            'name' => $this->cart['name'],
+            'price' => $this->cart['price'],
+            'quantity' => $this->quantity,
+            'attributes' => array(),
+            'associatedModel' => $this->cart['associatedModel']
+        ]);
+    }
+
     public function mount($cart)
     {
         $this->cart = $cart;
