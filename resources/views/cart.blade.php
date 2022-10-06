@@ -23,13 +23,14 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
+                  <th scope="col">產品</th>
+                  <th scope="col">價格</th>
+                  <th scope="col">數量</th>
+                  <th scope="col">合計</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach ($carts as $cart)
                 <tr>
                   <td>
                     <div class="media">
@@ -37,12 +38,12 @@
                         <img src="assets/img/gallery/card1.png" alt="" />
                       </div>
                       <div class="media-body">
-                        <p>Minimalistic shop for multipurpose use</p>
+                        <p>{{ $cart->name }}</p>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <h5>$360.00</h5>
+                    <h5>${{ $cart->price }}</h5>
                   </td>
                   <td>
                     <div class="product_count">
@@ -52,37 +53,13 @@
                     </div>
                   </td>
                   <td>
-                    <h5>$720.00</h5>
+                    <h5>${{720.00}}</h5>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <div class="media">
-                      <div class="d-flex">
-                        <img src="assets/img/gallery/card2.png" alt="" />
-                      </div>
-                      <div class="media-body">
-                        <p>Minimalistic shop for multipurpose use</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <h5>$360.00</h5>
-                  </td>
-                  <td>
-                    <div class="product_count">
-                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                        <input class="input-number" type="text" value="1" min="0" max="10">
-                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                    </div>
-                  </td>
-                  <td>
-                    <h5>$720.00</h5>
-                  </td>
-                </tr>
+                @endforeach
                 <tr class="bottom_button">
                   <td>
-                    <a class="btn_1" href="#">Update Cart</a>
+                    <a class="btn_1" href="#">更新購物車</a>
                   </td>
                   <td></td>
                   <td></td>
@@ -96,7 +73,7 @@
                   <td></td>
                   <td></td>
                   <td>
-                    <h5>Subtotal</h5>
+                    <h5>小計</h5>
                   </td>
                   <td>
                     <h5>$2160.00</h5>

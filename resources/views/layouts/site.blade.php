@@ -67,8 +67,8 @@
                                     </li>
                                     <li><a href="#">Pages</a>
                                         <ul class="submenu">
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="{{ url('login') }}">Login</a></li>
+                                            <li><a href="{{ url('showcart') }}">Cart</a></li>
                                             <li><a href="elements.html">Element</a></li>
                                             <li><a href="confirmation.html">Confirmation</a></li>
                                             <li><a href="checkout.html">Product Checkout</a></li>
@@ -87,7 +87,7 @@
                                     </div>
                                 </li>
                                 <li> <a href="{{ url('/login') }}"><span class="flaticon-user"></span></a></li>
-                                <li><a href="{{ url('/cart') }}"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <li><a href="{{ url('/showcart') }}"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>
                     </div>

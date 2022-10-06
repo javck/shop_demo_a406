@@ -152,7 +152,7 @@
                     <div class="popular-img">
                         <img src="{{asset($item->pic)}}" alt="">
                         <div class="img-cap">
-                            <span><a href="{{ url('/addCart') }}">加入購物車</a></span>
+                            <span><a href="{{ url('/addcart/' . $item->id) }}">加入購物車</a></span>
                         </div>
                         <div class="favorit-items">
                             <span class="flaticon-heart"></span>
