@@ -17,14 +17,14 @@ Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/', 'SiteController@renderHomePage');
     Route::get('/addcart/{ids}','SiteController@addCart');
     Route::get('/items/{id}','SiteController@renderItemDetailPage');
+    Route::get('/checkout','SiteController@renderCheckoutPage');
+    Route::get('/pay','SiteController@pay');
 });
 Route::get('/showcart',App\Http\Livewire\Cart::class);
 
 
 
 Route::view('/cart','cart');
-
-Route::view('/checkout','checkout');
 Route::view('/confirm','confirmation');
 
 Route::middleware([

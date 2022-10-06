@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="hero-cap text-center">
-                        <h2>Checkout</h2>
+                        <h2>你的訂單</h2>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
 <!--================Checkout Area =================-->
 <section class="checkout_area section_padding">
   <div class="container">
-    <div class="returning_customer">
+    {{-- <div class="returning_customer">
       <div class="check_title">
         <h2>
           Returning Customer?
@@ -60,7 +60,7 @@
       </div>
       <input type="text" placeholder="Enter coupon code" />
       <a class="tp_btn" href="#">Apply Coupon</a>
-    </div>
+    </div> --}}
     <div class="billing_details">
       <div class="row">
         <div class="col-lg-8">
@@ -133,51 +133,31 @@
         </div>
         <div class="col-lg-4">
           <div class="order_box">
-            <h2>Your Order</h2>
+            <h2>訂單明細</h2>
             <ul class="list">
               <li>
-                <a href="#">Product
-                  <span>Total</span>
+                <a href="#">商品
+                  <span>合計</span>
                 </a>
               </li>
+              @foreach ($carts as $cart)
               <li>
-                <a href="#">Fresh Blackberry
-                  <span class="middle">x 02</span>
-                  <span class="last">$720.00</span>
+                <a href="#">{{ $cart['name'] }}
+                  <span class="middle">x {{ $cart['quantity'] }}</span>
+                  <span class="last">${{ $cart['price'] * $cart['quantity'] }}</span>
                 </a>
               </li>
-              <li>
-                <a href="#">Fresh Tomatoes
-                  <span class="middle">x 02</span>
-                  <span class="last">$720.00</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">Fresh Brocoli
-                  <span class="middle">x 02</span>
-                  <span class="last">$720.00</span>
-                </a>
-              </li>
+              @endforeach
             </ul>
             <ul class="list list_2">
               <li>
-                <a href="#">Subtotal
-                  <span>$2160.00</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">Shipping
-                  <span>Flat rate: $50.00</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">Total
-                  <span>$2210.00</span>
+                <a href="#">合計
+                  <span>${{ $subtotal }}</span>
                 </a>
               </li>
             </ul>
             <div class="payment_item">
-              <div class="radion_btn">
+              {{-- <div class="radion_btn">
                 <input type="radio" id="f-option5" name="selector" />
                 <label for="f-option5">Check payments</label>
                 <div class="check"></div>
@@ -185,10 +165,10 @@
               <p>
                 Please send a check to Store Name, Store Street, Store Town,
                 Store State / County, Store Postcode.
-              </p>
+              </p> --}}
             </div>
             <div class="payment_item active">
-              <div class="radion_btn">
+              {{-- <div class="radion_btn">
                 <input type="radio" id="f-option6" name="selector" />
                 <label for="f-option6">Paypal </label>
                 <img src="img/product/single-product/card.jpg" alt="" />
@@ -197,14 +177,9 @@
               <p>
                 Please send a check to Store Name, Store Street, Store Town,
                 Store State / County, Store Postcode.
-              </p>
+              </p> --}}
             </div>
-            <div class="creat_account">
-              <input type="checkbox" id="f-option4" name="selector" />
-              <label for="f-option4">I’ve read and accept the </label>
-              <a href="#">terms & conditions*</a>
-            </div>
-            <a class="btn_3" href="#">Proceed to Paypal</a>
+            @livewire('checkout')
           </div>
         </div>
       </div>

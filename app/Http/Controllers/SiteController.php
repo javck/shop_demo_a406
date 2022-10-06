@@ -47,4 +47,17 @@ class SiteController extends Controller
         $item = Item::findOrFail($id);
         return view('product_detail',compact('item'));
     }
+
+    public function renderCheckoutPage()
+    {
+        $user = Auth::user();
+        $carts = \Cart::session($user->id)->getContent();
+        $subtotal = \Cart::session($user->id)->getSubtotal();
+        return view('checkout',compact('carts','subtotal'));
+    }
+
+    public function pay()
+    {
+        
+    }
 }
