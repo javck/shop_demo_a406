@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/', 'SiteController@renderHomePage');
     Route::get('/addcart/{ids}','SiteController@addCart');
-    Route::get('/showcart','SiteController@showCart');
     Route::get('/items/{id}','SiteController@renderItemDetailPage');
 });
+Route::get('/showcart',App\Http\Livewire\Cart::class);
 
 
 

@@ -36,12 +36,12 @@ class SiteController extends Controller
         return redirect('/showcart');
     }
 
-    public function showCart()
-    {
-        $user = Auth::user();
-        $carts = \Cart::session($user->id)->getContent();
-        return view('cart',compact('carts'));
-    }
+    // public function showCart()
+    // {
+    //     $user = Auth::user();
+    //     $carts = \Cart::session($user->id)->getContent();
+    //     return view('cart',compact('carts'));
+    // }
 
     public function renderItemDetailPage($id){
         $item = Item::findOrFail($id);
