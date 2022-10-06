@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @livewireStyles
 </head>
 
 <body>
@@ -233,6 +234,6 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{{asset('js/plugins.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
-    
+    @livewireScripts
 </body>
 </html>

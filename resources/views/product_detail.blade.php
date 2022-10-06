@@ -28,26 +28,7 @@
             </div>
             </div>
             <div class="col-lg-8">
-            <div class="single_product_text text-center">
-                <h3>{{ $item->title }}</h3>
-                <p>
-                    Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-                </p>
-                <div class="card_area">
-                    <div class="product_count_area">
-                        <p>數量</p>
-                        <div class="product_count d-inline-block">
-                            <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                            <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                            <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
-                        </div>
-                        <p>${{ $item->price }}</p>
-                    </div>
-                <div class="add_to_cart">
-                    <a href="{{ url('/addcart/' . $item->id) }}" class="btn_3">加入購物車</a>
-                </div>
-                </div>
-            </div>
+                @livewire('product-detail',['item' => $item])
             </div>
         </div>
         </div>

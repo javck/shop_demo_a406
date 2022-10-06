@@ -19,11 +19,16 @@ class SiteController extends Controller
     {
         $user = Auth::user();
         $item = Item::findOrFail($id);
+        if($request->has('quantity')){
+            $quantity = $request->quantity;
+        }else{
+            $quantity = 1;
+        }
         $data = [
             'id' => $id,
             'name' => $item->title,
             'price' => $item->price,
-            'quantity' => 1,
+            'quantity' => $quantity,
             'attributes' => array(),
             'associatedModel' => $item
         ];
