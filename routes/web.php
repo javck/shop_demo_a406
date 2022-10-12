@@ -21,6 +21,9 @@ Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/pay','SiteController@pay');
     Route::post('/pay/callback','SiteController@payCallback');
     Route::get('/confirm/{order_id}','SiteController@renderConfirmationPage');
+    Route::get('/shop','SiteController@renderShopPage');
+    Route::get('/contact','SiteController@renderContactPage');
+    Route::get('/about','SiteController@renderAboutPage');
 });
 Route::get('/showcart',App\Http\Livewire\Cart::class);
 

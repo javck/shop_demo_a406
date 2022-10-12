@@ -131,4 +131,19 @@ class SiteController extends Controller
         return redirect('/confirm/' . $order->id); //返回首頁
     }
 
+    public function renderAboutPage()
+    {
+        return view('about');
+    }
+
+    public function renderContactPage()
+    {
+        return view('contact');
+    }
+
+    public function renderShopPage()
+    {
+        return view('shop');
+    }
+
 }
