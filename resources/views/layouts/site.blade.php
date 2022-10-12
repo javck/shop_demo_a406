@@ -116,17 +116,18 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="{{asset('img/logo/logo2_footer.png')}}" alt=""></a>
+                                    <a href="index.html"><img src="{{ Voyager::image(setting('site.logo')) }}" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+                                        <p>{!! setting('site.description') !!}</p>
                                 </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                    {{ menu('Footer','menu.menu_footer') }}
+                    {{-- <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
                                 <h4>Quick Links</h4>
@@ -164,7 +165,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- Footer bottom -->
                 <div class="row align-items-center">

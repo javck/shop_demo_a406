@@ -6,6 +6,7 @@ use Cart;
 use Carbon\Carbon;
 use App\Models\Item;
 use App\Models\Order;
+use App\Models\Element;
 use App\Models\ItemOrder;
 use Illuminate\Http\Request;
 use TsaiYiHua\ECPay\Checkout;
@@ -27,7 +28,9 @@ class SiteController extends Controller
     public function renderHomePage(Request $request)
     {
         $items = Item::get();
-        return view('index',compact('items'));
+        $banners = Element::where('page','home')->where('position','banner')->where('enabled',true)->orderBy('sort','asc')->get();
+        $items_row1 = Element::where('page','home')->where('position','row1')->where('enabled',true)->orderBy('sort','asc')->get();
+        return view('index',compact('items','banners','items_row1'));
     }
 
     public function addCart(Request $request, $id)

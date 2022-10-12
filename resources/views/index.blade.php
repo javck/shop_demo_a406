@@ -4,50 +4,30 @@
 <!--? slider Area Start -->
 <div class="slider-area ">
     <div class="slider-active">
-        <!-- Single Slider -->
+        @foreach ($banners as $banner)
+            <!-- Single Slider -->
         <div class="single-slider slider-height d-flex align-items-center slide-bg">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                         <div class="hero__caption">
-                            <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Perfect Style</h1>
-                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
+                            <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">{{$banner->title }}</h1>
+                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">{{ $banner->subtitle }}</p>
                             <!-- Hero-btn -->
                             <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                <a href="{{ $banner->url }}" class="btn hero-btn">{{ $banner->url_txt }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                         <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                            <img src="{{asset('img/hero/watch.png')}}" alt="" class=" heartbeat">
+                            <img src="{{ Voyager::image($banner->pic) }}" alt="" class=" heartbeat">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Single Slider -->
-        <div class="single-slider slider-height d-flex align-items-center slide-bg">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                        <div class="hero__caption">
-                            <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Perfect Style</h1>
-                            <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
-                            <!-- Hero-btn -->
-                            <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                <a href="industries.html" class="btn hero-btn">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
-                        <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                            <img src="{{asset('img/hero/watch.png')}}" alt="" class=" heartbeat">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!-- slider Area End-->
@@ -63,39 +43,19 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($items_row1 as $item)
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                 <div class="single-new-pro mb-30 text-center">
                     <div class="product-img">
-                        <img src="{{asset('img/gallery/new_product1.png')}}" alt="">
+                        <img src="{{ Voyager::image($item->pic) }}" alt="">
                     </div>
                     <div class="product-caption">
-                        <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                        <span>$ 45,743</span>
+                        <h3><a href="product_details.html">{{ $item->title }}</a></h3>
+                        <span>{{ $item->subtitle }}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div class="single-new-pro mb-30 text-center">
-                    <div class="product-img">
-                        <img src="{{asset('img/gallery/new_product2.png')}}" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                        <span>$ 45,743</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div class="single-new-pro mb-30 text-center">
-                    <div class="product-img">
-                        <img src="{{asset('img/gallery/new_product3.png')}}" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                        <span>$ 45,743</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

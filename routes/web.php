@@ -14,16 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('App\Http\Controllers')->group(function(){
-    Route::get('/', 'SiteController@renderHomePage');
+    Route::get('/', 'SiteController@renderHomePage')->name('home');
     Route::get('/addcart/{id}','SiteController@addCart');
     Route::get('/items/{id}','SiteController@renderItemDetailPage');
     Route::get('/checkout','SiteController@renderCheckoutPage');
     Route::get('/pay','SiteController@pay');
     Route::post('/pay/callback','SiteController@payCallback');
     Route::get('/confirm/{order_id}','SiteController@renderConfirmationPage');
-    Route::get('/shop','SiteController@renderShopPage');
-    Route::get('/contact','SiteController@renderContactPage');
-    Route::get('/about','SiteController@renderAboutPage');
+    Route::get('/shop','SiteController@renderShopPage')->name('shop');
+    Route::get('/contact','SiteController@renderContactPage')->name('contact');
+    Route::get('/about','SiteController@renderAboutPage')->name('about');
 });
 Route::get('/showcart',App\Http\Livewire\Cart::class);
 
