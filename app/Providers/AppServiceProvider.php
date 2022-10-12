@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\ServiceProvider;
+use App\Http\FormFields\ConstantFormField;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Voyager::addFormField(ConstantFormField::class);
     }
 
     /**
