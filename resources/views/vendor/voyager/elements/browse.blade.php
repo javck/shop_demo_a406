@@ -10,7 +10,7 @@
 @endphp
 
 @section('search_filter')
-    @include('Ezlaravel::includes._filterField', ['fields' => $fields])
+    @include('includes._filterField', ['fields' => $fields])
 @stop
 
 @section('javascript')
