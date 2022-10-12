@@ -31,7 +31,7 @@
               </thead>
               <tbody>
                 @foreach ($carts as $cart)
-                  @livewire('cart-item', ['cart' => $cart])
+                  @livewire('cart-item', ['cart' => $cart], key($loop->index))
                 @endforeach
                 <tr class="bottom_button">
                   <td>
