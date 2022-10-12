@@ -49,7 +49,9 @@
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
-                            <nav>                                                
+                            {{ menu('Frontend','menu.classic') }}
+                            {{-- <nav>    
+                                                                            
                                 <ul id="navigation">  
                                     <li><a href="{{ url('/') }}">首頁</a></li>
                                     <li><a href="shop.html">shop</a></li>
@@ -77,7 +79,7 @@
                                     </li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
-                            </nav>
+                            </nav> --}}
                         </div>
                         <!-- Header Right -->
                         <div class="header-right">
