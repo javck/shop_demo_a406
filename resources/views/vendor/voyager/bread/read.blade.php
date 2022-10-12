@@ -140,10 +140,10 @@
                                 @endif
                             <!-- 自定義內容開始
                             @elseif($row->type == 'constant dropdown' && property_exists($row->details, 'key'))
-                                {!! app('Ezlaravel')->getConstDropDownVal($row->details->key,$dataTypeContent->{$row->field}) !!}
+                                {!! App\Http\Model\PublicUtil::getConstDropDownVal($row->details->key,$dataTypeContent->{$row->field}) !!}
                             @elseif($row->type == 'tag dropdown' && property_exists($row->details, 'type'))
                                 @if(is_array($dataTypeContent->{$row->field}))
-                                    {!! app('Ezlaravel')->getTagDropDownVal($dataTypeContent->{$row->field}) !!}
+                                    {!! App\Http\Model\PublicUtil::getTagDropDownVal($dataTypeContent->{$row->field}) !!}
                                 @else
                                     {!! $dataTypeContent->{$row->field} !!}
                                  @endif

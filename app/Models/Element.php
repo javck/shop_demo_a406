@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Http\Model\PublicUtil;
 use TCG\Voyager\Traits\Resizable;
 use TCG\Voyager\Traits\Translatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 //儲存前台的元件內容
@@ -98,7 +99,7 @@ class Element extends Model
         $agent = new Agent();
         if($agent->isMobile()){
             $newPath = Voyager::image(str_replace('.','m.',$this->pic));
-            if(app('Ezlaravel')->chkResourceExist($newPath)){
+            if(PublicUtil::chkResourceExist($newPath)){
                 return $newPath;
             }
         }
