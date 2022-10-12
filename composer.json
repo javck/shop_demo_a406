@@ -12,7 +12,6 @@
         "laravel/jetstream": "^2.12",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.10",
         "tcg/voyager": "^1.5",
         "tsaiyihua/laravel-ecpay": "^3.0"

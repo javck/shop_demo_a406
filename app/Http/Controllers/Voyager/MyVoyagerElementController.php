@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Voyager;
+namespace Javck\Ezlaravel\Http\Controllers;
 
 
 use App\Models\Element;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Session;
 
 use TCG\Voyager\Facades\Voyager;
-use App\Http\Controllers\Voyager\MyVoyagerBaseController;
+use Javck\Ezlaravel\Http\Controllers\MyVoyagerBaseController;
 
 class MyVoyagerElementController extends MyVoyagerBaseController
 {
